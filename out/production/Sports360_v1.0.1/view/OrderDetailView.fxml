@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="773.0" prefWidth="1286.0" stylesheets="@../styles/Order.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderDetailViewController">
+   <children>
+      <Separator layoutX="17.0" layoutY="51.0" prefHeight="7.0" prefWidth="1252.0" />
+      <Label layoutX="66.0" layoutY="14.0" prefHeight="28.0" prefWidth="160.0" text="ORDER HISTORY">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9271844660194175" startY="0.1650485436893204">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#0864ab" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <FontAwesomeIconView fill="#173879" glyphName="HISTORY" layoutX="25.0" layoutY="36.0" size="25" wrappingWidth="24.0" />
+      <TableView fx:id="tblOrders" layoutX="25.0" layoutY="157.0" prefHeight="587.0" prefWidth="444.0">
+        <columns>
+          <TableColumn fx:id="colOrderId" prefWidth="82.0" text="Order ID" />
+          <TableColumn fx:id="colUserId" prefWidth="101.00003051757812" text="User" />
+            <TableColumn fx:id="colDiscount" prefWidth="122.0" text="Discount" />
+            <TableColumn fx:id="colBillTotal" prefWidth="139.0" text="Bill Total" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSearchId" layoutX="25.0" layoutY="100.0" onKeyReleased="#searchIdOnAction" prefHeight="31.0" prefWidth="160.0" promptText="search order id" />
+      <Separator layoutX="201.0" layoutY="83.0" orientation="VERTICAL" prefHeight="65.0" prefWidth="0.0" />
+      <Separator layoutX="497.0" layoutY="85.0" orientation="VERTICAL" prefHeight="673.0" prefWidth="6.0" />
+      <Label layoutX="515.0" layoutY="94.0" prefHeight="266.0" prefWidth="748.0" style="-fx-background-radius: 10;" styleClass="paneX" textFill="WHITE" />
+      <FontAwesomeIconView fill="#f5f5f5" glyphName="USER" layoutX="623.0" layoutY="232.0" size="100" />
+      <JFXTextField fx:id="txtCustId" editable="false" focusColor="#f4f5f8" layoutX="548.0" layoutY="291.0" prefHeight="31.0" prefWidth="229.0" promptText="Customer id" styleClass="textFields" stylesheets="@../styles/Order.css" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtTelephone" editable="false" focusColor="#f4f5f8" layoutX="798.0" layoutY="217.0" prefHeight="31.0" prefWidth="428.0" promptText="telephone" styleClass="textFields" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtCustomerName" editable="false" focusColor="#f4f5f8" layoutX="798.0" layoutY="148.0" prefHeight="31.0" prefWidth="428.0" promptText="Customer Name" styleClass="textFields" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="txtMail" editable="false" focusColor="#f4f5f8" layoutX="798.0" layoutY="291.0" prefHeight="31.0" prefWidth="428.0" promptText="Email" styleClass="textFields" unFocusColor="#f5eeee" />
+      <JFXDatePicker fx:id="txtDateView" defaultColor="#4d19c6" layoutX="258.0" layoutY="100.0" onAction="#searchDateOnAction" prefHeight="31.0" prefWidth="209.0" promptText="Date Info" />
+      <TableView fx:id="tblItem" layoutX="515.0" layoutY="385.0" prefHeight="307.0" prefWidth="748.0" styleClass="table">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="95.0" text="Item Code" />
+          <TableColumn fx:id="colItemDesc" prefWidth="211.0" text="Desc" />
+            <TableColumn fx:id="colItemQty" prefWidth="88.0" text="Qty" />
+            <TableColumn fx:id="colItemWarranty" prefWidth="87.0" text="Warranty" />
+            <TableColumn fx:id="colItemTotal" prefWidth="143.0" text="Total" />
+            <TableColumn fx:id="colItemProfit" prefWidth="123.0" text="Profit" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnGoNext" alignment="BASELINE_LEFT" layoutX="1103.0" layoutY="706.0" mnemonicParsing="false" onAction="#goNextOnAction" prefHeight="42.0" prefWidth="160.0" styleClass="bevel-grey" text="       NEXT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView glyphName="CHEVRON_CIRCLE_RIGHT" layoutX="1215.0" layoutY="736.0" size="25" />
+      <Button fx:id="btnGoBack" alignment="BASELINE_LEFT" layoutX="515.0" layoutY="706.0" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="42.0" prefWidth="160.0" styleClass="bevel-grey" text="            BACK">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView glyphName="ARROW_CIRCLE_LEFT" layoutX="550.0" layoutY="735.0" size="25" />
+      <JFXButton layoutX="212.0" layoutY="100.0" onAction="#reloadTableOnAction" prefHeight="31.0" prefWidth="24.0" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="REPEAT" size="20" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <FontAwesomeIconView fx:id="fntIdWarning" fill="#f20707" glyphName="WARNING" layoutX="159.0" layoutY="120.0" size="20" visible="false" />
+   </children>
+</AnchorPane>

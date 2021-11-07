@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="776.0" prefWidth="1283.0" stylesheets="@../styles/repairOrder.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairOrderFormController">
+   <children>
+      <Label layoutX="34.0" layoutY="20.0" prefHeight="21.0" prefWidth="176.0" text="REPAIR ORDER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutY="67.0" prefHeight="14.0" prefWidth="1283.0" />
+      <Label fx:id="lblCustomerId" layoutX="848.0" layoutY="26.0" prefHeight="21.0" prefWidth="86.0" text="C-00001" />
+      <FontAwesomeIconView glyphName="USER" layoutX="802.0" layoutY="44.0" size="30" />
+      <Label fx:id="lblDate" layoutX="1006.0" layoutY="25.0" prefHeight="21.0" prefWidth="100.0" text="2021-09-14" />
+      <Label fx:id="lblTime" layoutX="1172.0" layoutY="25.0" prefHeight="21.0" prefWidth="75.0" text="09 : 25 : 23" />
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="966.0" layoutY="44.0" size="25" />
+      <FontAwesomeIconView glyphName="CLOCK_ALT" layoutX="1132.0" layoutY="44.0" size="25" />
+      <Separator layoutX="934.0" layoutY="8.0" orientation="VERTICAL" prefHeight="56.0" prefWidth="6.0" />
+      <Separator layoutX="1103.0" layoutY="9.0" orientation="VERTICAL" prefHeight="56.0" prefWidth="6.0" />
+      <Pane layoutX="41.0" layoutY="91.0" prefHeight="277.0" prefWidth="1202.0" style="-fx-background-radius: 15;" styleClass="square">
+         <children>
+            <Label layoutX="26.0" layoutY="24.0" prefHeight="21.0" prefWidth="142.0" text="Bill No                  : " textFill="#fff8f8" />
+            <JFXButton layoutX="188.0" layoutY="17.0" onAction="#generateBillNoOnAction" prefHeight="31.0" prefWidth="49.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#fcf7f7" glyphName="REPEAT" size="25" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="lblBillNo" layoutX="257.0" layoutY="22.0" prefHeight="21.0" prefWidth="172.0" text="X-XXXXX" textFill="#fff8f8" />
+            <JFXTextField fx:id="txtExternalCost" focusColor="#54628d" layoutX="178.0" layoutY="129.0" prefHeight="31.0" prefWidth="194.0" styleClass="textFields" text="00.00" unFocusColor="#f8f3f3" />
+            <JFXTextField fx:id="txtExternalItemCharges" editable="false" layoutX="26.0" layoutY="200.0" prefHeight="31.0" prefWidth="172.0" styleClass="textFields" text="00.00" unFocusColor="#f8f3f3" />
+            <Button fx:id="btnExternalOrder" layoutX="213.0" layoutY="200.0" mnemonicParsing="false" onAction="#placeExtenalOrderOnAction" prefHeight="31.0" prefWidth="158.0" styleClass="bevel-grey" text="Place External Order" />
+            <JFXTextArea fx:id="txtRepairNote" focusColor="#415797" layoutX="467.0" layoutY="92.0" prefHeight="139.0" prefWidth="444.0" promptText="Repair Note" styleClass="textFields" unFocusColor="#fcf9f9" />
+            <Button fx:id="btnGenerateBill" layoutX="978.0" layoutY="214.0" mnemonicParsing="false" onAction="#generateBillOnAction" prefHeight="47.0" prefWidth="194.0" style="-fx-background-radius: 13;" styleClass="bevel-grey" text="GENERATE BILL" />
+            <Separator layoutX="951.0" layoutY="200.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="6.0" />
+            <Separator layoutX="951.0" layoutY="198.0" prefHeight="5.0" prefWidth="248.0" />
+            <JFXTextField fx:id="txtExternalOrderId" editable="false" focusColor="#5469a4" layoutX="470.0" layoutY="17.0" prefHeight="31.0" prefWidth="277.0" promptText="External Order Id" styleClass="textFields" unFocusColor="#f8f1f1" />
+            <Label layoutX="26.0" layoutY="134.0" prefHeight="21.0" prefWidth="142.0" text="External Cost       :" textFill="#fff8f8" />
+            <Label layoutX="26.0" layoutY="74.0" prefHeight="21.0" prefWidth="142.0" text="Item No               : " textFill="#fff8f8" />
+            <JFXButton layoutX="188.0" layoutY="67.0" onAction="#generateItemCodeOnAction" prefHeight="31.0" prefWidth="49.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#fcf7f7" glyphName="REPEAT" size="25" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="lblItemNo" layoutX="257.0" layoutY="74.0" prefHeight="21.0" prefWidth="172.0" text="X-XXXXX" textFill="#fff8f8" />
+            <JFXDatePicker fx:id="dateReturnDate" defaultColor="#7c77b2" editable="false" layoutX="839.0" layoutY="19.0" prefHeight="31.0" prefWidth="346.0" promptText="Item Return Date">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXDatePicker>
+            <FontAwesomeIconView fx:id="fntExternalCost" fill="#f21a1a" glyphName="WARNING" layoutX="343.0" layoutY="151.0" size="20" visible="false" />
+            <FontAwesomeIconView fx:id="fntRepairNote" fill="#f21a1a" glyphName="WARNING" layoutX="877.0" layoutY="222.0" size="20" visible="false" />
+            <FontAwesomeIconView fx:id="fntDateWarning" fill="#f21a1a" glyphName="WARNING" layoutX="1122.0" layoutY="41.0" size="20" visible="false" />
+         </children>
+      </Pane>
+      <Separator layoutX="41.0" layoutY="386.0" prefHeight="5.0" prefWidth="1194.0" />
+      <JFXTextField fx:id="btnSrchBill" layoutX="104.0" layoutY="398.0" onKeyReleased="#srchTxtBillNo" prefHeight="31.0" prefWidth="261.0" promptText="Search BillNo " />
+      <FontAwesomeIconView glyphName="SEARCH" layoutX="53.0" layoutY="424.0" size="30" />
+      <TableView fx:id="tblRepairItem" layoutX="41.0" layoutY="447.0" prefHeight="246.0" prefWidth="1194.0">
+        <columns>
+          <TableColumn fx:id="colItem" prefWidth="75.0" text="Item No" />
+          <TableColumn fx:id="colBillNo" prefWidth="91.0" text="Bill No" />
+            <TableColumn fx:id="colRepairNote" prefWidth="306.0" text="Repair Note" />
+            <TableColumn fx:id="colExternalOrderId" prefWidth="149.0" text="External Order Id" />
+            <TableColumn fx:id="colExternalCharge" prefWidth="147.0" text="External Charge" />
+            <TableColumn fx:id="colReceivedDate" prefWidth="144.0" text="Received Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="126.0" text="Return Daate" />
+            <TableColumn fx:id="colBillAmount" prefWidth="155.0" text="Bill Amount" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnGoBack" layoutX="42.0" layoutY="707.0" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="47.0" prefWidth="184.0" styleClass="bevel-grey" text="Go Back" />
+   </children>
+</AnchorPane>

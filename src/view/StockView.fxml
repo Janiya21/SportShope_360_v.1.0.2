@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="776.0" prefWidth="1116.0" stylesheets="@../styles/dailyIncome.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StockViewController">
+   <children>
+      <Label layoutX="25.0" layoutY="21.0" prefHeight="21.0" prefWidth="172.0" text="USER DETAIL VIEW">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutY="56.0" prefHeight="0.0" prefWidth="1116.0" />
+      <Separator layoutY="421.0" prefHeight="0.0" prefWidth="1116.0" />
+      <PieChart fx:id="mostSoldItems" layoutX="31.0" layoutY="66.0" legendSide="RIGHT" prefHeight="340.0" prefWidth="1059.0" style="-fx-background-color: #ebebfa;" />
+      <TableView fx:id="tblUsers" layoutX="31.0" layoutY="442.0" prefHeight="296.0" prefWidth="1059.0">
+        <columns>
+          <TableColumn fx:id="colUserId" prefWidth="124.0" text="UserId" />
+          <TableColumn fx:id="colUserName" prefWidth="256.0" text="Username" />
+            <TableColumn fx:id="colAddress" prefWidth="149.0" text="Address" />
+            <TableColumn fx:id="colMail" prefWidth="174.0" text="Email" />
+            <TableColumn fx:id="colAccType" prefWidth="185.0" text="Account Type" />
+            <TableColumn fx:id="colpass" prefWidth="170.0" text="Password" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="776.0" prefWidth="1283.0" style="-fx-background-color: white;" stylesheets="@../styles/Customer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerDetailsFormController">
+   <children>
+      <Label layoutX="96.0" layoutY="16.0" prefHeight="28.0" prefWidth="149.0" text="Add Customer">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#333dab" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TableView fx:id="tblCustomer" editable="true" layoutX="37.0" layoutY="363.0" prefHeight="324.0" prefWidth="1213.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="135.00003051757812" text="Id" />
+            <TableColumn fx:id="colName" prefWidth="435.0" text="Name" />
+            <TableColumn fx:id="colMail" prefWidth="365.0" text="Mail" />
+            <TableColumn fx:id="colTelephoneNo" prefWidth="276.0" text="Telephone No" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Separator layoutX="37.0" layoutY="307.0" prefHeight="11.0" prefWidth="1220.0" />
+      <Button fx:id="goToNextBtn" focusTraversable="false" layoutX="1019.0" layoutY="707.0" mnemonicParsing="false" onAction="#selectCustomerOnAction" prefHeight="48.0" prefWidth="215.0" styleClass="bevel-grey" text="Continue With Customer">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="goBackBtn" focusTraversable="false" layoutX="41.0" layoutY="707.0" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="48.0" prefWidth="208.0" styleClass="bevel-grey" text="Go Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Separator layoutX="20.0" layoutY="58.0" prefHeight="11.0" prefWidth="1244.0" />
+      <JFXButton fx:id="btnOrderDetails" focusTraversable="false" layoutX="1055.0" layoutY="15.0" onAction="#goToOrderDetailsOnAction" prefHeight="31.0" prefWidth="195.0" styleClass="bevel-grey" text="View Order History" textFill="#413357">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="USER_PLUS" layoutX="46.0" layoutY="40.0" size="30">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#524fd6" />
+                  <Stop color="#1e0636" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></FontAwesomeIconView>
+      <Label layoutX="37.0" layoutY="325.0" prefHeight="21.0" prefWidth="530.0" text="Select the Customer bellow" underline="true">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Pane layoutX="41.0" layoutY="82.0" prefHeight="212.0" prefWidth="1213.0" style="-fx-background-radius: 18;" styleClass="square">
+         <children>
+            <Button layoutX="975.0" layoutY="70.0" mnemonicParsing="false" onAction="#deleteCustomerOnAction" prefHeight="48.0" prefWidth="221.0" styleClass="bevel-grey-square" text="       Delete Customer" textFill="#363434">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="lblCustomerId" layoutX="445.0" layoutY="34.0" prefHeight="11.0" prefWidth="142.0" text="x-xxxxx" textFill="#bfffd6">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></Label>
+            <JFXButton layoutX="392.0" layoutY="32.0" onAction="#generateIdOnAction" prefHeight="31.0" prefWidth="43.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#b5fcda" glyphName="REPEAT" size="21" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="255.0" layoutY="32.0" prefHeight="31.0" prefWidth="124.0" text="Customer Id :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmail" layoutX="647.0" layoutY="30.0" prefHeight="31.0" prefWidth="547.0" promptText="email" styleClass="textFields" unFocusColor="#fcf6f6" />
+            <JFXTextField fx:id="txtName" focusColor="#1458f5" layoutX="255.0" layoutY="80.0" prefHeight="40.0" prefWidth="703.0" promptText="customer name" styleClass="textFields" unFocusColor="WHITE" />
+            <Button layoutX="975.0" layoutY="129.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="48.0" prefWidth="221.0" styleClass="bevel-grey-square" text="      Update Cusomer" textFill="#252424">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="47.0" layoutY="154.0" size="150" />
+            <Button layoutX="718.0" layoutY="129.0" mnemonicParsing="false" onAction="#addCustomerOnAction" prefHeight="48.0" prefWidth="233.0" styleClass="bevel-grey-square" text="       Add Customer" textFill="#1b1a1a">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <JFXTextField fx:id="txtTelNo" layoutX="255.0" layoutY="151.0" prefHeight="31.0" prefWidth="453.0" promptText="telephone no" styleClass="textFields" unFocusColor="WHITE" />
+            <Separator layoutX="706.0" layoutY="122.0" opacity="0.47" orientation="VERTICAL" prefHeight="61.0" prefWidth="0.0" />
+            <Separator layoutX="955.0" layoutY="64.0" opacity="0.3" orientation="VERTICAL" prefHeight="57.0" prefWidth="6.0" />
+            <Separator layoutX="1193.0" layoutY="2.0" opacity="0.47" orientation="VERTICAL" prefHeight="61.0" prefWidth="6.0" />
+            <Separator layoutX="214.0" layoutY="8.0" orientation="VERTICAL" prefHeight="204.0" prefWidth="6.0" />
+            <FontAwesomeIconView fill="#09092c" glyphName="CHECK_CIRCLE" layoutX="775.0" layoutY="159.0" size="20" />
+            <FontAwesomeIconView fill="#e40c0c" glyphName="CLOSE" layoutX="1015.0" layoutY="101.0" size="22" styleClass="btn2" />
+            <FontAwesomeIconView fill="#09092c" glyphName="ROTATE_LEFT" layoutX="1015.0" layoutY="159.0" size="19" />
+            <FontAwesomeIconView fx:id="fntTelWarning1" fill="#ee0c0c" glyphName="WARNING" layoutX="681.0" layoutY="180.0" size="20" visible="false" />
+            <FontAwesomeIconView fx:id="fntTelWarning" fill="#ee0c0c" glyphName="WARNING" layoutX="671.0" layoutY="170.0" size="20" visible="false" />
+            <FontAwesomeIconView fx:id="fntNameWarning" fill="#e40808" glyphName="WARNING" layoutX="895.0" layoutY="106.0" size="20" visible="false" />
+            <FontAwesomeIconView fx:id="fntEmailWarning" fill="#e40808" glyphName="WARNING" layoutX="1121.0" layoutY="51.0" size="20" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

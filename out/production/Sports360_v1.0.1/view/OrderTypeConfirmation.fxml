@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="531.0" prefWidth="563.0" stylesheets="@../styles/goToOrders.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderTypeConfirmationController">
+   <children>
+      <Label layoutX="14.0" layoutY="21.0" prefHeight="21.0" prefWidth="199.0" text="SELECT ORDER TYPE" textFill="#062b75">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutY="57.0" prefHeight="6.0" prefWidth="563.0" />
+      <JFXButton fx:id="btnWarrantedItemRepair" buttonType="RAISED" layoutX="36.0" layoutY="304.0" onAction="#goToWarrantedItemOnAction" prefHeight="84.0" prefWidth="492.0" styleClass="bevel-grey" text="     Go To Warranted Item Repair Session" textFill="#052c86">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="btnItemRepair" buttonType="RAISED" layoutX="36.0" layoutY="194.0" onAction="#goToItemRepairOnAction" prefHeight="84.0" prefWidth="492.0" styleClass="bevel-grey" text="   Go To Item Repair Session" textFill="#052c86">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="btnMakeOrder" buttonType="RAISED" layoutX="36.0" layoutY="88.0" onAction="#goToCustomerOrderOnAction" prefHeight="84.0" prefWidth="492.0" styleClass="bevel-grey" text="  Make a Order For Customer" textFill="#052c86">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <FontAwesomeIconView fill="#039e31" glyphName="ARROW_RIGHT" layoutX="72.0" layoutY="352.0" size="20" />
+      <FontAwesomeIconView fill="#039e31" glyphName="ARROW_RIGHT" layoutX="71.0" layoutY="240.0" size="20" />
+      <FontAwesomeIconView fill="#039e31" glyphName="ARROW_RIGHT" layoutX="71.0" layoutY="134.0" size="20" />
+      <JFXButton fx:id="btnMakeReservationNote" buttonType="RAISED" layoutX="36.0" layoutY="411.0" onAction="#makeAReservationNoteOnAction" prefHeight="84.0" prefWidth="492.0" styleClass="bevel-grey" text="Make A Reservation Note" textFill="#052c86">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="#039e31" glyphName="ARROW_RIGHT" layoutX="72.0" layoutY="459.0" size="20" />
+   </children>
+</AnchorPane>

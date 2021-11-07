@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="589.0" prefWidth="534.0" stylesheets="@../styles/Login3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaymentFormController">
+   <children>
+      <Separator layoutY="58.0" prefHeight="13.0" prefWidth="559.0" />
+      <Label layoutX="62.0" layoutY="16.0" prefHeight="24.0" prefWidth="114.0" text="PAYMENT">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#30a3c9" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <FontAwesomeIconView glyphName="MONEY" layoutX="22.0" layoutY="39.0" size="25" />
+      <JFXButton fx:id="btnConfirmOrder" focusTraversable="false" layoutX="268.0" layoutY="491.0" onAction="#confirmOrderOnAction" prefHeight="42.0" prefWidth="228.0" styleClass="bevel-grey" text="Confirm Order" />
+      <JFXToggleButton fx:id="radBtnCash" contentDisplay="RIGHT" layoutX="123.0" layoutY="123.0" selected="true" text="Cash">
+         <toggleGroup>
+            <ToggleGroup fx:id="grp01" />
+         </toggleGroup>
+      </JFXToggleButton>
+      <JFXToggleButton fx:id="radBtnCard" contentDisplay="RIGHT" layoutX="382.0" layoutY="123.0" text="Card" toggleGroup="$grp01" />
+      <FontAwesomeIconView glyphName="MONEY" layoutX="86.0" layoutY="163.0" size="30" />
+      <FontAwesomeIconView glyphName="CC_MASTERCARD" layoutX="336.0" layoutY="161.0" size="30" />
+      <Label layoutX="85.0" layoutY="237.0" prefHeight="21.0" prefWidth="105.0" text="Full Amount " />
+      <Label layoutX="85.0" layoutY="287.0" prefHeight="21.0" prefWidth="105.0" text="Discount" />
+      <Label layoutX="86.0" layoutY="359.0" prefHeight="21.0" prefWidth="105.0" text="Total">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFullAmount" alignment="CENTER_RIGHT" layoutX="257.0" layoutY="237.0" prefHeight="21.0" prefWidth="209.0" text="00000.00" />
+      <Label fx:id="lblDiscount" alignment="CENTER_RIGHT" layoutX="257.0" layoutY="287.0" prefHeight="21.0" prefWidth="209.0" text="-             00000.00" />
+      <Label fx:id="lblTotal" alignment="CENTER_RIGHT" layoutX="257.0" layoutY="359.0" prefHeight="21.0" prefWidth="209.0" text="00000.00">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="50.0" layoutY="337.0" prefHeight="6.0" prefWidth="460.0" />
+      <Separator layoutX="50.0" layoutY="413.0" prefHeight="6.0" prefWidth="460.0" />
+   </children>
+</AnchorPane>

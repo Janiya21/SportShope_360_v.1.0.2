@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="395.0" prefWidth="1116.0" stylesheets="@../styles/dailyIncome.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MostSoldItemsController">
+   <children>
+      <PieChart fx:id="mostSoldItems" layoutX="6.0" layoutY="9.0" legendSide="RIGHT" legendVisible="false" prefHeight="375.0" prefWidth="1108.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>

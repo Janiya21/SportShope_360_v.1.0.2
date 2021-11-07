@@ -1,0 +1,72 @@
+.root{
+    -fx-background-color:white;
+}
+
+.dark{
+    -fx-background-color:#312d2d;
+}
+
+.btn{
+    -fx-background-color:#312d2d;
+    -fx-border-width:2;
+    -fx-border-radius:15px;
+    -fx-background-radius:15px;
+    -fx-text-fill:#ffffff;
+}
+
+.bevel-grey {
+    -fx-background-color:
+        linear-gradient(#f2f2f2, #d6d6d6),
+        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+        linear-gradient(#dddddd 0%, #f6f6f6 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.bevel-grey-black {
+    -fx-background-color:
+        linear-gradient(white , #d6d6d6),
+        linear-gradient(#fcfcfc 0%, #330066 0%, #e0b3ff 100%),
+        linear-gradient(#dddddd 0%, #330066 20%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 8,1,0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 4 );
+}
+
+.btnX{
+    -fx-background-color:transparent;
+    -fx-border-color:#312d2d;
+    -fx-border-width:3;
+    -fx-border-radius:18px;
+}
+
+.btn1{
+    -fx-background-color:transparent;
+    -fx-border-color:#312d2d;
+    -fx-border-width:2;
+    -fx-border-radius:18px;
+}
+
+.btn2{
+    -fx-background-color:#ffb3b3;
+    -fx-border-width:2;
+    -fx-border-radius:25px;
+    -fx-background-radius:25px;
+    -fx-text-fill:black;
+}
+
+.btn3{
+    -fx-background-color:linear-gradient(to right, #4d0099, #ff00ff);
+    -fx-border-width:1;
+    -fx-border-radius:25px;
+    -fx-background-radius:25px;
+    -fx-text-fill:black;
+}
+
+/*----------------------------------------------------------------*/
+

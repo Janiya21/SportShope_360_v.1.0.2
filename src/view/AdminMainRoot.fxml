@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="776.0" prefWidth="1285.0" style="-fx-background-color: #cccccc;" stylesheets="@../styles/adminRoot.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminMainRootController">
+   <children>
+      <AnchorPane fx:id="adminRoot" layoutX="170.0" prefHeight="776.0" prefWidth="1116.0" style="-fx-background-color: white;" />
+      <JFXButton layoutX="14.0" layoutY="264.0" onAction="#ReservationNoteOnAction" prefHeight="67.0" prefWidth="143.0" styleClass="bevel-grey" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#21044a" glyphName="BOOK" size="50" />
+         </graphic></JFXButton>
+      <JFXButton layoutX="14.0" layoutY="20.0" onAction="#showReportOnAction" prefHeight="67.0" prefWidth="143.0" styleClass="bevel-grey" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#100339" glyphName="BAR_CHART_ALT" size="45" wrappingWidth="49.71428680419922" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="13.0" layoutY="143.0" onAction="#ItemManageOnAction" prefHeight="67.0" prefWidth="143.0" styleClass="bevel-grey" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#040e40" glyphName="CART_ARROW_DOWN" size="55" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="goBackBtn" layoutY="639.0" onAction="#goBackOnAction" prefHeight="96.0" prefWidth="168.0" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#1d0351" glyphName="ARROW_CIRCLE_LEFT" size="55" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="14.0" layoutY="388.0" onAction="#AgentInfoOnAction" prefHeight="67.0" prefWidth="143.0" styleClass="bevel-grey" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#1b033c" glyphName="USER_SECRET" size="50" />
+         </graphic>
+      </JFXButton>
+      <Separator layoutX="1.0" layoutY="126.0" prefHeight="3.0" prefWidth="168.0" />
+      <Separator layoutY="248.0" prefHeight="3.0" prefWidth="168.0" />
+      <Separator layoutY="374.0" prefHeight="3.0" prefWidth="168.0" />
+      <Separator layoutY="498.0" prefHeight="3.0" prefWidth="168.0" />
+      <JFXButton layoutX="14.0" layoutY="514.0" onAction="#showStockOnAction" prefHeight="67.0" prefWidth="143.0" styleClass="bevel-grey" text=" ">
+         <graphic>
+            <FontAwesomeIconView fill="#1b033c" glyphName="USER" size="50" />
+         </graphic>
+      </JFXButton>
+      <Separator layoutX="1.0" layoutY="624.0" prefHeight="3.0" prefWidth="168.0" />
+      <Label layoutX="45.0" layoutY="97.0" text="Report View" />
+      <Label layoutX="39.0" layoutY="220.0" text="Item manager" />
+      <Label layoutX="52.0" layoutY="345.0" text="Reservations" />
+      <Label layoutX="43.0" layoutY="467.0" text="About Agent" />
+      <Label layoutX="47.0" layoutY="594.0" text="About User" />
+      <Label layoutX="33.0" layoutY="741.0" prefHeight="21.0" prefWidth="105.0" text="Developer Info" underline="true" />
+   </children>
+</AnchorPane>

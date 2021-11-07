@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="694.0" prefWidth="1102.0" styleClass="root" stylesheets="@../styles/Login3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginViewController">
+   <children>
+      <JFXTextField fx:id="txtMail" layoutX="88.0" layoutY="303.0" onKeyReleased="#searchMailIsExistsOnAction" prefHeight="31.0" prefWidth="384.0" promptText="Ⓜ Mail" />
+      <Label layoutX="88.0" layoutY="111.0" text="User Id">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUserId" layoutX="260.0" layoutY="109.0" prefHeight="21.0" prefWidth="157.0" text="X-XXXXX">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton focusTraversable="false" layoutX="212.0" layoutY="106.0" onAction="#generateUserIdOnAction" prefHeight="32.0" prefWidth="41.0" text=" ">
+         <graphic>
+            <FontAwesomeIconView glyphName="REPEAT" size="21" />
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtAddress" layoutX="88.0" layoutY="234.0" prefHeight="31.0" prefWidth="384.0" promptText="🏦 address" />
+      <JFXRadioButton fx:id="cashierRadBtn" layoutX="920.0" layoutY="345.0" selected="true" text="Cashier">
+         <toggleGroup>
+            <ToggleGroup fx:id="grp01" />
+         </toggleGroup></JFXRadioButton>
+      <JFXRadioButton fx:id="adminRadBtn" layoutX="712.0" layoutY="345.0" text="Admin" toggleGroup="$grp01" />
+      <JFXTextField fx:id="txtPass" layoutX="88.0" layoutY="377.0" prefHeight="31.0" prefWidth="384.0" promptText="✽ enter a password between 10 digits" />
+      <JFXTextField fx:id="txtUser" layoutX="88.0" layoutY="164.0" prefHeight="31.0" prefWidth="384.0" promptText="☻ username" />
+      <JFXPasswordField fx:id="txtConfirmPass" layoutX="88.0" layoutY="449.0" prefHeight="31.0" prefWidth="384.0" promptText="✽ re-enter the password" />
+      <Button layoutX="150.0" layoutY="610.0" mnemonicParsing="false" onAction="#left" prefHeight="45.0" prefWidth="284.0" styleClass="bevel-grey-black" text="Log - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="signBtn" layoutX="150.0" layoutY="542.0" mnemonicParsing="false" onAction="#signIn" prefHeight="45.0" prefWidth="284.0" styleClass="bevel-grey" text="Sign - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="712.0" layoutY="542.0" mnemonicParsing="false" onAction="#right" prefHeight="45.0" prefWidth="284.0" styleClass="bevel-grey-black" text="Sign - Up">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="607.0" layoutY="234.0" prefHeight="31.0" prefWidth="71.0" text="Password" />
+      <JFXTextField fx:id="txtUserName" layoutX="730.0" layoutY="138.0" prefHeight="31.0" prefWidth="303.0" promptText="☻ username" styleClass="text-field" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="730.0" layoutY="229.0" prefHeight="31.0" prefWidth="303.0" promptText="✽ password" styleClass="text-field" />
+      <Button fx:id="LoginBtn" layoutX="712.0" layoutY="457.0" mnemonicParsing="false" onAction="#ButtonLoginAction" prefHeight="45.0" prefWidth="284.0" styleClass="bevel-grey" text="Log - In">
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="611.0" layoutY="345.0" prefHeight="21.0" prefWidth="63.0" text="Account" />
+      <Label layoutX="609.0" layoutY="138.0" prefHeight="31.0" prefWidth="47.0" text="User Id" />
+      <Separator layoutX="17.0" layoutY="67.0" prefHeight="7.0" prefWidth="1069.0" />
+      <Label layoutX="88.0" layoutY="23.0" prefHeight="31.0" prefWidth="147.0" text="SIGN UP">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#75079e" />
+                  <Stop color="#3dcbee" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="650.0" layoutY="23.0" prefHeight="31.0" prefWidth="147.0" text="LOG IN">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#75079e" />
+                  <Stop color="#2d2d2f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <FontAwesomeIconView glyphName="UNLOCK_ALT" layoutX="611.0" layoutY="49.0" size="30">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#393737" />
+                  <Stop color="#5b3056" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView glyphName="USER" layoutX="44.0" layoutY="49.0" size="30">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#393737" />
+                  <Stop color="#d312bd" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIconView>
+      <VBox fx:id="vb_content" layoutX="2.0" layoutY="-1.0" prefHeight="670.0" prefWidth="557.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="672.0" fitWidth="556.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/sport360_logo2.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

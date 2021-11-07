@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addItemRoot" prefHeight="776.0" prefWidth="1116.0" stylesheets="@../styles/repairOrder.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminItemManageViewController">
+   <children>
+      <Label layoutX="86.0" layoutY="11.0" prefHeight="38.0" prefWidth="218.0" text="Add Items To The Store">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#c934a4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Separator layoutX="24.0" layoutY="59.0" prefHeight="0.0" prefWidth="1066.0" />
+      <TableView fx:id="tblItemDetails" layoutX="25.0" layoutY="451.0" prefHeight="301.0" prefWidth="1066.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="102.0" text="Item Code" />
+            <TableColumn fx:id="colAgentId" prefWidth="95.0" text="Agent Id" />
+            <TableColumn fx:id="colDesc" prefWidth="301.0" text="DESC" />
+            <TableColumn fx:id="colWarranty" prefWidth="91.0" text="Warranty" />
+            <TableColumn fx:id="colQty" prefWidth="79.0" text="Qty" />
+            <TableColumn fx:id="colSupPrice" prefWidth="129.0" text="Sup Price" />
+            <TableColumn fx:id="colSellPrice" prefWidth="138.0" text="Sell Price" />
+            <TableColumn fx:id="colUnitProfit" prefWidth="128.0" text="Unit Profit" />
+            <TableColumn fx:id="collCategory" minWidth="0.0" prefWidth="2.0" text="Category" />
+        </columns>
+      </TableView>
+      <Separator layoutX="9.0" layoutY="387.0" prefHeight="3.0" prefWidth="1096.0" />
+      <Pane layoutX="25.0" layoutY="83.0" prefHeight="287.0" prefWidth="1066.0" style="-fx-background-radius: 18;" styleClass="square">
+         <children>
+            <JFXComboBox fx:id="cmbAgentId" focusColor="WHITE" layoutX="415.0" layoutY="28.0" prefHeight="31.0" prefWidth="190.0" promptText="Agent Id" styleClass="textFields" unFocusColor="#eee8e8" />
+            <Button fx:id="brnAddNewAgent" layoutX="257.0" layoutY="28.0" mnemonicParsing="false" onAction="#addNewAgentOnAction" prefHeight="31.0" prefWidth="143.0" styleClass="bevel-grey" text="Add New Agent" />
+            <Separator layoutX="223.0" layoutY="10.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="6.0" />
+            <Label fx:id="lblItemId" layoutX="35.0" layoutY="33.0" prefHeight="21.0" prefWidth="115.0" text="X-XXXXX" textFill="#f5eeee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCategory" layoutX="635.0" layoutY="28.0" prefHeight="31.0" prefWidth="394.0" promptText="category" styleClass="textFields" unFocusColor="#fcf5f5" />
+            <JFXTextField fx:id="txtDesc" layoutX="36.0" layoutY="94.0" prefHeight="31.0" prefWidth="719.0" promptText="description" styleClass="textFields" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtWarranty" layoutX="781.0" layoutY="94.0" prefHeight="31.0" prefWidth="248.0" promptText="warranty months" styleClass="textFields" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtUnitPrice" layoutX="724.0" layoutY="145.0" prefHeight="31.0" prefWidth="305.0" promptText="unit selling price" styleClass="textFields" unFocusColor="#fffbfb" />
+            <JFXTextField fx:id="txtQtyOnHand" layoutX="35.0" layoutY="145.0" prefHeight="31.0" prefWidth="218.0" promptText="Qty On Hand" styleClass="textFields" unFocusColor="#fffbfb" />
+            <JFXTextField fx:id="txtSuppliedPrice" layoutX="312.0" layoutY="145.0" prefHeight="31.0" prefWidth="340.0" promptText="unit supplied price" styleClass="textFields" unFocusColor="#fffbfb" />
+            <Button layoutX="824.0" layoutY="218.0" mnemonicParsing="false" onAction="#deleteItemOnAction" prefHeight="38.0" prefWidth="182.0" styleClass="bevel-grey" text="Delete Item Set" />
+            <Button layoutX="573.0" layoutY="218.0" mnemonicParsing="false" onAction="#updateItemOnAction" prefHeight="38.0" prefWidth="182.0" styleClass="bevel-grey" text="Update Item Set" />
+            <Button layoutX="53.0" layoutY="218.0" mnemonicParsing="false" onAction="#clearFieldsOnAction" prefHeight="38.0" prefWidth="182.0" styleClass="bevel-grey" text="Clear Fields" />
+            <JFXButton layoutX="127.0" layoutY="18.0" onAction="#generateItemId" prefHeight="49.0" prefWidth="65.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#fffefe" glyphName="REPEAT" size="25" />
+               </graphic>
+            </JFXButton>
+            <Button layoutX="309.0" layoutY="218.0" mnemonicParsing="false" onAction="#addItemOnAction" prefHeight="38.0" prefWidth="182.0" styleClass="bevel-grey" text="Add Item Set" />
+         </children>
+      </Pane>
+      <FontAwesomeIconView glyphName="DATABASE" layoutX="44.0" layoutY="39.0" size="26" />
+      <JFXButton fx:id="btnShowBestItems" layoutX="911.0" layoutY="14.0" onAction="#showBestItemsOnAction" prefHeight="31.0" prefWidth="182.0" text="Mostly Sold Items" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearchItem" layoutX="25.0" layoutY="399.0" onKeyReleased="#searchItemOnAction" prefHeight="31.0" prefWidth="211.0" promptText="search item here" />
+      <JFXComboBox fx:id="cmbCategory" layoutX="271.0" layoutY="399.0" onAction="#CategorizingOnAction" prefHeight="31.0" prefWidth="175.0" promptText="Category" />
+   </children>
+</AnchorPane>

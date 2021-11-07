@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="776.0" prefWidth="1116.0" stylesheets="@../styles/barchart.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationsManagerViewController">
+   <children>
+      <Label layoutX="46.0" layoutY="14.0" prefHeight="28.0" prefWidth="168.0" text="Most Sold Brands">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="4.0" layoutY="54.0" prefHeight="0.0" prefWidth="1110.0" />
+      <TableView fx:id="tblReservations" layoutX="31.0" layoutY="476.0" prefHeight="218.0" prefWidth="1057.0">
+        <columns>
+          <TableColumn fx:id="colResId" prefWidth="100.0" text="Res Id" />
+          <TableColumn fx:id="colCusId" prefWidth="103.0" text="Cus Id" />
+            <TableColumn fx:id="colCusName" prefWidth="161.0" text="Cust Name" />
+            <TableColumn fx:id="colEmail" prefWidth="134.0" text="Email" />
+            <TableColumn fx:id="colTp" prefWidth="124.0" text="TP" />
+            <TableColumn fx:id="colContext" prefWidth="331.0" text="Context" />
+            <TableColumn fx:id="colDate" prefWidth="103.0" text="Date" />
+        </columns>
+      </TableView>
+      <Pane layoutX="30.0" layoutY="76.0" prefHeight="319.0" prefWidth="1057.0" styleClass="bevel-grey">
+         <children>
+            <StackedBarChart fx:id="barchart" layoutX="-1.0" prefHeight="327.0" prefWidth="1050.0">
+              <xAxis>
+                  <NumberAxis fx:id="y" side="LEFT" />
+              </xAxis>
+              <yAxis>
+                  <CategoryAxis side="BOTTOM" fx:id="x" />
+              </yAxis>
+            </StackedBarChart>
+         </children>
+      </Pane>
+      <Separator layoutX="3.0" layoutY="409.0" prefHeight="3.0" prefWidth="1110.0" />
+      <Label layoutX="30.0" layoutY="422.0" prefHeight="28.0" prefWidth="251.0" text="Reservations On Customers">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSendMail" layoutX="919.0" layoutY="705.0" onAction="#SendMailOnAction" prefHeight="42.0" prefWidth="168.0" styleClass="bevel-grey" text="Send A Mail" />
+   </children>
+</AnchorPane>

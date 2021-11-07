@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane fx:id="rootAgents" prefHeight="776.0" prefWidth="1116.0" stylesheets="@../styles/repairOrder.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgentDetailFormController">
+   <children>
+      <Pane layoutX="296.0" layoutY="75.0" prefHeight="302.0" prefWidth="793.0" style="-fx-background-radius: 18;" styleClass="square">
+         <children>
+            <Button layoutX="133.0" layoutY="16.0" mnemonicParsing="false" onAction="#generateIdOnAction" prefHeight="40.0" prefWidth="58.0" styleClass="bevel-grey" text=" " />
+            <FontAwesomeIconView glyphName="REPEAT" layoutX="153.0" layoutY="43.0" size="21" />
+            <Label fx:id="lblAgentId" layoutX="24.0" layoutY="25.0" prefHeight="21.0" prefWidth="109.0" text="X-XXXXX" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtAgentName" layoutX="24.0" layoutY="78.0" prefHeight="31.0" prefWidth="519.0" promptText="Agent Name" styleClass="textFields" unFocusColor="#fffafa" />
+            <JFXTextField fx:id="txtPhoneNo" layoutX="24.0" layoutY="134.0" prefHeight="31.0" prefWidth="519.0" promptText="Telephone" styleClass="textFields" unFocusColor="#fffafa" />
+            <JFXTextField fx:id="txtEmail" layoutX="24.0" layoutY="192.0" prefHeight="31.0" prefWidth="519.0" promptText="Email" styleClass="textFields" unFocusColor="#fffafa" />
+            <JFXTextField fx:id="txtCompany" layoutX="24.0" layoutY="247.0" prefHeight="31.0" prefWidth="519.0" promptText="Company" styleClass="textFields" unFocusColor="#fffafa" />
+            <Button layoutX="562.0" layoutY="89.0" mnemonicParsing="false" onAction="#addAgentOnAction" prefHeight="40.0" prefWidth="217.0" styleClass="bevel-grey" text="Add Agent" />
+            <Button layoutX="562.0" layoutY="165.0" mnemonicParsing="false" onAction="#deleteAgentOnAction" prefHeight="40.0" prefWidth="217.0" styleClass="bevel-grey" text="Delete Agent" />
+            <Button fx:id="btnLoadEmailPane" layoutX="562.0" layoutY="238.0" mnemonicParsing="false" onAction="#loadEmailPaneOnAction" prefHeight="40.0" prefWidth="217.0" styleClass="bevel-grey" text="Send Email" />
+         </children>
+      </Pane>
+      <Separator layoutX="15.0" layoutY="63.0" prefHeight="4.0" prefWidth="1084.0" />
+      <Label layoutX="95.0" layoutY="22.0" prefHeight="31.0" prefWidth="151.0" text="ADD AGENTS">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#8065d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="205.0" layoutX="58.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/1555754.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="281.0" layoutY="78.0" orientation="VERTICAL" prefHeight="302.0" prefWidth="6.0" />
+      <Separator layoutX="26.0" layoutY="370.0" prefHeight="16.0" prefWidth="257.0" />
+      <Rating layoutX="70.0" layoutY="314.0" />
+      <TableView fx:id="tblAgentDetails" layoutX="25.0" layoutY="396.0" prefHeight="296.0" prefWidth="1064.0">
+        <columns>
+          <TableColumn fx:id="colAgentId" prefWidth="110.0" text="Agent Id" />
+          <TableColumn fx:id="colAgentName" prefWidth="310.0" text="Agent Name" />
+            <TableColumn fx:id="colAgentTelephone" prefWidth="200.0" text="TelePhone" />
+            <TableColumn fx:id="colAgentMail" prefWidth="216.0" text="Email" />
+            <TableColumn fx:id="colAgentCompany" prefWidth="226.0" text="Company" />
+            <TableColumn fx:id="colRating" minWidth="1.0" prefWidth="1.0" text="Rating" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnGoBack" disable="true" layoutX="26.0" layoutY="705.0" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="40.0" prefWidth="144.0" styleClass="bevel-grey" text="GoBack" />
+      <FontAwesomeIconView glyphName="USER_SECRET" layoutX="44.0" layoutY="49.0" size="32" />
+   </children>
+</AnchorPane>
