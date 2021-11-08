@@ -140,21 +140,17 @@
 				<text><![CDATA[Sports 360]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="70" width="205" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
+				<reportElement x="170" y="80" width="205" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
 				<text><![CDATA[0758167339  | janithsandaru999@gmail.com]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="30" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
+				<reportElement x="170" y="40" width="205" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
 				<text><![CDATA[10th Line Street,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="50" width="205" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
+				<reportElement x="170" y="60" width="205" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
 				<text><![CDATA[Werahera, Boralesgamuwa]]></text>
 			</staticText>
-			<image>
-				<reportElement x="20" y="-20" width="139" height="149" uuid="c053cb05-64be-49ad-97c1-5f8fb6d1309d"/>
-				<imageExpression><![CDATA["C:/Users/JANITH/Desktop/JDBC Apps/Sports360_v1.0.1/src/assets/sport360_logo.jpeg"]]></imageExpression>
-			</image>
 			<textField>
 				<reportElement x="70" y="143" width="100" height="24" uuid="d3505fe5-b264-44f6-8fc0-2d39a267be8a"/>
 				<textFieldExpression><![CDATA[$P{lblOrderId}]]></textFieldExpression>
@@ -166,6 +162,10 @@
 				</textElement>
 				<text><![CDATA[Bill No]]></text>
 			</staticText>
+			<image>
+				<reportElement x="20" y="-13" width="130" height="140" uuid="78c91da4-55e4-436b-ae3e-319954c4afe2"/>
+				<imageExpression><![CDATA["C:/Users/JANITH/Desktop/Java All/JDBC Apps/Sports360_v1.0.2/src/assets/sport360_logo.jpeg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<columnHeader>
